@@ -56,3 +56,7 @@ You can use a simple dart package ([test_cov_console](https://pub.dev/packages/t
 ## Screenshot
 
 <img src="assets/screenshot/drawer.png" height="500em" /> &nbsp; <img src="assets/screenshot/home.png" height="500em" /> &nbsp; <img src="assets/screenshot/top_rated.png" height="500em" /> &nbsp; <img src="assets/screenshot/search.png" height="500em" /> &nbsp; <img src="assets/screenshot/detail.png" height="500em" /> &nbsp; <img src="assets/screenshot/watchlist.png" height="500em" /> 
+
+## Console Coverage Test
+
+<img src="assets/screenshot/coverage.png"/>
