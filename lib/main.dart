@@ -1,25 +1,24 @@
+import 'package:about/about_page.dart';
+import 'package:core/core.dart';
+import 'package:core/presentation/pages/home_series_page.dart';
+import 'package:core/presentation/pages/on_the_air_series_page.dart';
+import 'package:core/presentation/pages/popular_series_page.dart';
+import 'package:core/presentation/pages/series_detail_page.dart';
+import 'package:core/presentation/pages/top_rated_series_page.dart';
+import 'package:core/presentation/pages/watchlist_series_page.dart';
+import 'package:core/presentation/provider/on_the_air_notifier.dart';
+import 'package:core/presentation/provider/popular_series_notifier.dart';
+import 'package:core/presentation/provider/series_detail_notifier.dart';
+import 'package:core/presentation/provider/series_list_notifier.dart';
+import 'package:core/presentation/provider/top_rated_series_notifier.dart';
+import 'package:core/presentation/provider/watchlist_series_notifier.dart';
+import 'package:core/presentation/widgets/custom_drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:moris/common/utils.dart';
-import 'package:moris/presentation/pages/on_the_air_series_page.dart';
-import 'package:moris/presentation/pages/popular_series_page.dart';
-import 'package:moris/presentation/pages/search_page.dart';
-import 'package:moris/presentation/pages/series_detail_page.dart';
-import 'package:moris/presentation/pages/top_rated_series_page.dart';
-import 'package:moris/presentation/pages/watchlist_series_page.dart';
-import 'package:moris/presentation/provider/on_the_air_notifier.dart';
-import 'package:moris/presentation/provider/series_detail_notifier.dart';
-import 'package:moris/presentation/provider/series_list_notifier.dart';
-import 'package:moris/presentation/provider/series_search_notifier.dart';
-import 'package:moris/presentation/provider/top_rated_series_notifier.dart';
-import 'package:moris/presentation/provider/watchlist_series_notifier.dart';
 import 'package:provider/provider.dart';
 import 'package:moris/injection.dart' as di;
-
-import 'common/constants.dart';
-import 'presentation/pages/home_series_page.dart';
-import 'presentation/provider/popular_series_notifier.dart';
-import 'presentation/widgets/custom_drawer.dart';
+import 'package:search/presentation/pages/search_page.dart';
+import 'package:search/presentation/provider/series_search_notifier.dart';
 
 void main() {
   di.init();
@@ -89,6 +88,8 @@ class MyApp extends StatelessWidget {
               return CupertinoPageRoute(builder: (_) => SearchPage());
             case WatchlistSeriesPage.ROUTE_NAME:
               return CupertinoPageRoute(builder: (_) => WatchlistSeriesPage());
+            case AboutPage.ROUTE_NAME:
+              return MaterialPageRoute(builder: (_) => AboutPage());
             default:
               return MaterialPageRoute(
                 builder: (_) {
