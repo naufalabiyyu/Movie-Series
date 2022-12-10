@@ -15,8 +15,10 @@ import 'package:core/presentation/provider/watchlist_series_notifier.dart';
 import 'package:core/presentation/widgets/custom_drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:moris/injection.dart' as di;
+import 'package:search/bloc/search_bloc.dart';
 import 'package:search/presentation/pages/search_page.dart';
 import 'package:search/presentation/provider/series_search_notifier.dart';
 
@@ -45,12 +47,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => di.locator<OnTheAirNotifierSeries>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<SeriesSearchNotifier>(),
-        ),
+        // ChangeNotifierProvider(
+        //   create: (_) => di.locator<SeriesSearchNotifier>(),
+        // ),
         ChangeNotifierProvider(
           create: (_) => di.locator<WatchlistSeriesNotifier>(),
-        )
+        ),
+        BlocProvider(
+          create: (_) => di.locator<SearchBloc>(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

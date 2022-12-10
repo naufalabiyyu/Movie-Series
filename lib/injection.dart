@@ -20,12 +20,19 @@ import 'package:core/presentation/provider/top_rated_series_notifier.dart';
 import 'package:core/presentation/provider/watchlist_series_notifier.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
+import 'package:search/bloc/search_bloc.dart';
 import 'package:search/domain/usecases/search_series.dart';
 import 'package:search/presentation/provider/series_search_notifier.dart';
 
 final locator = GetIt.instance;
 
 void init() {
+  // bloc
+  locator.registerFactory(
+    () => SearchBloc(
+      locator(),
+    ),
+  );
   // provider
   locator.registerFactory(
     () => SeriesListNotifier(
