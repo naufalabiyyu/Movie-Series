@@ -20,7 +20,6 @@ import 'package:provider/provider.dart';
 import 'package:moris/injection.dart' as di;
 import 'package:search/bloc/search_bloc.dart';
 import 'package:search/presentation/pages/search_page.dart';
-import 'package:search/presentation/provider/series_search_notifier.dart';
 
 void main() {
   di.init();
